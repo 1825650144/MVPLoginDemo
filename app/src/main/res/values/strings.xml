@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MVPLoginDemo</string>
+
+    <string name="marquee_text">心中有阳光，脚底有力量！</string>
+    <string name="marquee_texts">心中有阳光，脚底有力量！心中有阳光，脚底有力量！心中有阳光，脚底有力量！心中有阳光，脚底有力量！心中有阳光，脚底有力量！</string>
+    <string name="xml_str_shouye_notice2">安全邮箱移动版上线了，有更多，更详细的精彩活动，聪明的小伙伴都参与了，快来加入。</string>
+
+
+    <string name="icons">&#xe6dd;&#xe6e9; &#xe6ca; &#xe6cd; 哈哈&#x3605; &#x35ad; &#x35ae; &#x35af; &#xe611; &#xe70e; </string>
+
+
+
+</resources>

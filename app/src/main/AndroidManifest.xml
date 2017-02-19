@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sadink">
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/> <!-- 拦截短信（就是接受短些的权限） -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> <!-- 开机启动完成后就开始接收(可选权限) -->
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <!--<activity android:name=".mvp_rxjava_dagger2.ui.login.view.LoginActivity">-->
+        <!--<activity-->
+            <!--android:name=".mvp_rxjava_dagger2.ui.login.view.LoginActivity"-->
+            <!--android:launchMode="singleTask">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+
+        <!--<activity-->
+            <!--android:name=".share.local.ShareLocalActivity"-->
+            <!--android:launchMode="singleTask">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+
+
+
+        <!--<activity-->
+            <!--android:name=".android_unique.UniqueActivity"-->
+            <!--android:launchMode="singleTask">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+
+
+        <activity
+            android:name=".swipeToLoadLayout.HistoryFragment"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+
+
+        <activity android:name=".mvp_rxjava_dagger2.ui.weather.view.WeatherActivity"/>
+
+        <activity android:name=".glide.GlideMainActivity"/>
+
+        <activity android:name=".eventbus.MainActivityEBTrigger"/>
+
+
+        <receiver android:name="com.sadink.sendSMS.InterceptReceiver"> <!--这里没有设置android:enable和android:exported属性，参考官方文档-->
+            <!--这里的优先级为1000，假定你手机中没有安装其他第三方短信拦截软件，如360等，否则其他第三方软件拦截权限过高导致你都应用程序拦截不到短信-->
+            <intent-filter android:priority="1000">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/> <!--这里是写死的，参见官方文档-->
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>
